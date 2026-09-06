@@ -1,0 +1,1298 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>NEXORA | AI & Future Technology</title>
+
+<style>
+
+/* =========================
+   BASIC RESET
+========================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:Arial, Helvetica, sans-serif;
+    background:#05070d;
+    color:white;
+    overflow-x:hidden;
+}
+
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+
+/* =========================
+   BACKGROUND
+========================= */
+
+body::before{
+    content:"";
+    position:fixed;
+    width:500px;
+    height:500px;
+    background:#5b5cff;
+    filter:blur(180px);
+    opacity:0.12;
+    top:-200px;
+    left:-150px;
+    z-index:-1;
+}
+
+body::after{
+    content:"";
+    position:fixed;
+    width:450px;
+    height:450px;
+    background:#00e5ff;
+    filter:blur(180px);
+    opacity:0.08;
+    bottom:-150px;
+    right:-150px;
+    z-index:-1;
+}
+
+
+/* =========================
+   NAVBAR
+========================= */
+
+header{
+    position:fixed;
+    top:0;
+    width:100%;
+    z-index:1000;
+
+    background:rgba(5,7,13,0.72);
+    backdrop-filter:blur(18px);
+
+    border-bottom:1px solid rgba(255,255,255,0.08);
+}
+
+nav{
+    max-width:1200px;
+    height:75px;
+    margin:auto;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    padding:0 25px;
+}
+
+.logo{
+    font-size:25px;
+    font-weight:800;
+    letter-spacing:2px;
+}
+
+.logo span{
+    color:#6c63ff;
+}
+
+.nav-links{
+    display:flex;
+    gap:30px;
+    list-style:none;
+}
+
+.nav-links a{
+    color:#aeb3c2;
+    font-size:14px;
+    transition:0.3s;
+}
+
+.nav-links a:hover{
+    color:white;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero{
+    min-height:100vh;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    text-align:center;
+
+    padding:120px 20px 80px;
+
+    position:relative;
+}
+
+.hero-content{
+    max-width:950px;
+}
+
+.tag{
+    display:inline-block;
+
+    padding:8px 16px;
+
+    border:1px solid rgba(108,99,255,0.5);
+    border-radius:30px;
+
+    color:#9d98ff;
+
+    background:rgba(108,99,255,0.08);
+
+    font-size:13px;
+
+    margin-bottom:25px;
+}
+
+.hero h1{
+    font-size:clamp(48px,8vw,90px);
+    line-height:1;
+
+    margin-bottom:25px;
+
+    letter-spacing:-4px;
+}
+
+.hero h1 span{
+    background:linear-gradient(90deg,#7c73ff,#00e5ff);
+
+    -webkit-background-clip:text;
+    color:transparent;
+}
+
+.hero p{
+    max-width:700px;
+
+    margin:auto;
+
+    color:#9da3b4;
+
+    font-size:18px;
+
+    line-height:1.7;
+}
+
+.hero-buttons{
+    margin-top:35px;
+
+    display:flex;
+    justify-content:center;
+    gap:15px;
+
+    flex-wrap:wrap;
+}
+
+.btn{
+    padding:14px 24px;
+
+    border-radius:10px;
+
+    font-weight:bold;
+
+    transition:0.3s;
+}
+
+.btn-primary{
+    background:linear-gradient(90deg,#6c63ff,#00bcd4);
+}
+
+.btn-primary:hover{
+    transform:translateY(-4px);
+
+    box-shadow:0 15px 40px rgba(108,99,255,0.25);
+}
+
+.btn-secondary{
+    border:1px solid rgba(255,255,255,0.15);
+
+    color:#c8cbd5;
+}
+
+.btn-secondary:hover{
+    border-color:#6c63ff;
+    color:white;
+}
+
+
+/* =========================
+   SECTION
+========================= */
+
+section{
+    padding:110px 20px;
+}
+
+.container{
+    max-width:1150px;
+    margin:auto;
+}
+
+.section-title{
+    text-align:center;
+
+    margin-bottom:55px;
+}
+
+.section-title small{
+    color:#7770ff;
+
+    letter-spacing:3px;
+
+    font-size:12px;
+
+    font-weight:bold;
+}
+
+.section-title h2{
+    font-size:42px;
+
+    margin:12px 0;
+}
+
+.section-title p{
+    color:#9298a8;
+
+    max-width:650px;
+
+    margin:auto;
+}
+
+
+/* =========================
+   TECHNOLOGY CARDS
+========================= */
+
+.tech-grid{
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:20px;
+}
+
+.tech-card{
+    padding:30px;
+
+    min-height:240px;
+
+    background:
+    linear-gradient(
+        145deg,
+        rgba(255,255,255,0.06),
+        rgba(255,255,255,0.015)
+    );
+
+    border:1px solid rgba(255,255,255,0.09);
+
+    border-radius:20px;
+
+    backdrop-filter:blur(15px);
+
+    transition:0.4s;
+
+    position:relative;
+
+    overflow:hidden;
+}
+
+.tech-card::before{
+    content:"";
+
+    position:absolute;
+
+    width:120px;
+    height:120px;
+
+    background:#6c63ff;
+
+    filter:blur(80px);
+
+    opacity:0;
+
+    transition:0.4s;
+}
+
+.tech-card:hover{
+    transform:translateY(-10px);
+
+    border-color:rgba(108,99,255,0.5);
+}
+
+.tech-card:hover::before{
+    opacity:0.25;
+}
+
+.tech-icon{
+    font-size:38px;
+
+    margin-bottom:20px;
+}
+
+.tech-card h3{
+    font-size:21px;
+
+    margin-bottom:10px;
+}
+
+.tech-card p{
+    color:#9097a8;
+
+    font-size:14px;
+
+    line-height:1.7;
+}
+
+
+/* =========================
+   STATISTICS
+========================= */
+
+.stats{
+    background:#090c14;
+
+    border-top:1px solid rgba(255,255,255,0.06);
+
+    border-bottom:1px solid rgba(255,255,255,0.06);
+}
+
+.stats-grid{
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:20px;
+}
+
+.stat{
+    text-align:center;
+
+    padding:30px 15px;
+}
+
+.stat h3{
+    font-size:45px;
+
+    background:linear-gradient(90deg,#7770ff,#00e5ff);
+
+    -webkit-background-clip:text;
+
+    color:transparent;
+}
+
+.stat p{
+    color:#858b9b;
+
+    margin-top:5px;
+}
+
+
+/* =========================
+   AI SECTION
+========================= */
+
+.ai-section{
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:60px;
+
+    align-items:center;
+}
+
+.ai-visual{
+    height:430px;
+
+    border-radius:25px;
+
+    background:
+    radial-gradient(circle at center,
+    rgba(108,99,255,0.3),
+    transparent 45%),
+
+    linear-gradient(
+    145deg,
+    #10142a,
+    #070910
+    );
+
+    border:1px solid rgba(255,255,255,0.1);
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    position:relative;
+
+    overflow:hidden;
+}
+
+.ai-core{
+    width:180px;
+    height:180px;
+
+    border-radius:50%;
+
+    background:
+    radial-gradient(circle,
+    #ffffff 0%,
+    #7b73ff 12%,
+    #302a99 45%,
+    transparent 70%
+    );
+
+    box-shadow:
+    0 0 40px #6c63ff,
+    0 0 100px rgba(108,99,255,0.6);
+
+    animation:pulse 3s infinite;
+}
+
+.orbit{
+    position:absolute;
+
+    width:280px;
+    height:280px;
+
+    border:1px solid rgba(108,99,255,0.5);
+
+    border-radius:50%;
+
+    animation:rotate 8s linear infinite;
+}
+
+.orbit2{
+    width:350px;
+    height:350px;
+
+    border-color:rgba(0,229,255,0.25);
+
+    animation-duration:12s;
+    animation-direction:reverse;
+}
+
+.ai-content small{
+    color:#7770ff;
+
+    letter-spacing:3px;
+}
+
+.ai-content h2{
+    font-size:45px;
+
+    margin:15px 0 20px;
+}
+
+.ai-content p{
+    color:#939aaa;
+
+    line-height:1.8;
+
+    margin-bottom:25px;
+}
+
+
+/* =========================
+   FEATURES
+========================= */
+
+.features{
+    display:flex;
+
+    flex-direction:column;
+
+    gap:15px;
+}
+
+.feature{
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+    padding:15px;
+
+    border-radius:12px;
+
+    background:rgba(255,255,255,0.035);
+}
+
+.check{
+    width:32px;
+    height:32px;
+
+    border-radius:8px;
+
+    background:rgba(108,99,255,0.15);
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    color:#8b84ff;
+}
+
+
+/* =========================
+   FUTURE
+========================= */
+
+.future-grid{
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:20px;
+}
+
+.future-card{
+    padding:30px;
+
+    border-radius:18px;
+
+    background:#0a0d15;
+
+    border:1px solid rgba(255,255,255,0.07);
+
+    transition:0.3s;
+}
+
+.future-card:hover{
+    border-color:#6c63ff;
+
+    transform:translateY(-5px);
+}
+
+.future-card h3{
+    margin-bottom:10px;
+}
+
+.future-card p{
+    color:#8d93a3;
+
+    font-size:14px;
+}
+
+
+/* =========================
+   CTA
+========================= */
+
+.cta{
+    text-align:center;
+
+    padding:120px 20px;
+
+    background:
+    radial-gradient(
+    circle at center,
+    rgba(108,99,255,0.18),
+    transparent 55%
+    );
+}
+
+.cta h2{
+    font-size:50px;
+
+    margin-bottom:15px;
+}
+
+.cta p{
+    color:#939aaa;
+
+    max-width:600px;
+
+    margin:auto;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+    padding:35px 20px;
+
+    text-align:center;
+
+    border-top:1px solid rgba(255,255,255,0.08);
+
+    color:#666c7a;
+
+    font-size:13px;
+}
+
+.footer-logo{
+    color:white;
+
+    font-size:20px;
+
+    font-weight:bold;
+
+    margin-bottom:8px;
+}
+
+
+/* =========================
+   ANIMATIONS
+========================= */
+
+.fade{
+    opacity:0;
+
+    transform:translateY(30px);
+
+    transition:0.8s;
+}
+
+.fade.show{
+    opacity:1;
+
+    transform:translateY(0);
+}
+
+@keyframes pulse{
+
+    0%,100%{
+        transform:scale(1);
+    }
+
+    50%{
+        transform:scale(1.12);
+    }
+
+}
+
+@keyframes rotate{
+
+    from{
+        transform:rotate(0deg);
+    }
+
+    to{
+        transform:rotate(360deg);
+    }
+
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:850px){
+
+    .nav-links{
+        display:none;
+    }
+
+    .tech-grid{
+        grid-template-columns:1fr;
+    }
+
+    .stats-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .ai-section{
+        grid-template-columns:1fr;
+    }
+
+    .future-grid{
+        grid-template-columns:1fr;
+    }
+
+    .hero h1{
+        letter-spacing:-2px;
+    }
+
+    .ai-content h2{
+        font-size:36px;
+    }
+
+    .cta h2{
+        font-size:36px;
+    }
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- =========================
+     NAVIGATION
+========================= -->
+
+<header>
+
+<nav>
+
+<div class="logo">
+NEX<span>ORA</span>
+</div>
+
+<ul class="nav-links">
+
+<li>
+<a href="#home">Home</a>
+</li>
+
+<li>
+<a href="#technology">Technology</a>
+</li>
+
+<li>
+<a href="#ai">AI</a>
+</li>
+
+<li>
+<a href="#future">Future</a>
+</li>
+
+</ul>
+
+</nav>
+
+</header>
+
+
+
+<!-- =========================
+     HERO
+========================= -->
+
+<section class="hero" id="home">
+
+<div class="hero-content fade">
+
+<div class="tag">
+✦ THE NEXT ERA OF TECHNOLOGY
+</div>
+
+<h1>
+Imagine.
+<span>Innovate.</span>
+Transform.
+</h1>
+
+<p>
+NEXORA explores the technologies shaping tomorrow —
+from artificial intelligence and robotics to smart cities
+and next-generation digital systems.
+</p>
+
+<div class="hero-buttons">
+
+<a href="#technology" class="btn btn-primary">
+Explore Technology →
+</a>
+
+<a href="#future" class="btn btn-secondary">
+Discover the Future
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================
+     TECHNOLOGY
+========================= -->
+
+<section id="technology">
+
+<div class="container">
+
+<div class="section-title fade">
+
+<small>CORE TECHNOLOGIES</small>
+
+<h2>The Future Is Being Built Now.</h2>
+
+<p>
+Powerful technologies are changing the way people
+live, work, communicate and solve problems.
+</p>
+
+</div>
+
+
+<div class="tech-grid">
+
+
+<div class="tech-card fade">
+
+<div class="tech-icon">
+🤖
+</div>
+
+<h3>Artificial Intelligence</h3>
+
+<p>
+AI allows computers to analyze information,
+recognize patterns and assist humans with complex tasks.
+</p>
+
+</div>
+
+
+<div class="tech-card fade">
+
+<div class="tech-icon">
+🦾
+</div>
+
+<h3>Robotics</h3>
+
+<p>
+Advanced robots can combine sensors, software
+and intelligent systems to perform useful tasks.
+</p>
+
+</div>
+
+
+<div class="tech-card fade">
+
+<div class="tech-icon">
+🏙️
+</div>
+
+<h3>Smart Cities</h3>
+
+<p>
+Connected technology can help cities manage
+transportation, energy and public infrastructure.
+</p>
+
+</div>
+
+
+<div class="tech-card fade">
+
+<div class="tech-icon">
+🔐
+</div>
+
+<h3>Cybersecurity</h3>
+
+<p>
+Modern security systems help protect information,
+devices and digital networks from cyber threats.
+</p>
+
+</div>
+
+
+<div class="tech-card fade">
+
+<div class="tech-icon">
+☁️
+</div>
+
+<h3>Cloud Computing</h3>
+
+<p>
+Cloud platforms allow people and organizations
+to store data and run applications over the internet.
+</p>
+
+</div>
+
+
+<div class="tech-card fade">
+
+<div class="tech-icon">
+🧬
+</div>
+
+<h3>Future Science</h3>
+
+<p>
+New scientific discoveries could transform medicine,
+materials, energy and many other fields.
+</p>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================
+     STATS
+========================= -->
+
+<section class="stats">
+
+<div class="container">
+
+<div class="stats-grid">
+
+
+<div class="stat fade">
+
+<h3>AI</h3>
+
+<p>Intelligent Systems</p>
+
+</div>
+
+
+<div class="stat fade">
+
+<h3>5G</h3>
+
+<p>Connected World</p>
+
+</div>
+
+
+<div class="stat fade">
+
+<h3>24/7</h3>
+
+<p>Digital Connectivity</p>
+
+</div>
+
+
+<div class="stat fade">
+
+<h3>∞</h3>
+
+<p>Possibilities</p>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================
+     AI SECTION
+========================= -->
+
+<section id="ai">
+
+<div class="container ai-section">
+
+
+<div class="ai-visual fade">
+
+<div class="orbit"></div>
+
+<div class="orbit orbit2"></div>
+
+<div class="ai-core"></div>
+
+</div>
+
+
+<div class="ai-content fade">
+
+<small>INTELLIGENT FUTURE</small>
+
+<h2>
+AI Is More Than Code.
+</h2>
+
+<p>
+Artificial intelligence is becoming an important part
+of modern technology. It can help people analyze data,
+automate repetitive work and create new possibilities.
+</p>
+
+
+<div class="features">
+
+
+<div class="feature">
+
+<div class="check">✓</div>
+
+<span>Data & Pattern Recognition</span>
+
+</div>
+
+
+<div class="feature">
+
+<div class="check">✓</div>
+
+<span>Automation & Smart Systems</span>
+
+</div>
+
+
+<div class="feature">
+
+<div class="check">✓</div>
+
+<span>Human-AI Collaboration</span>
+
+</div>
+
+
+<div class="feature">
+
+<div class="check">✓</div>
+
+<span>Future Innovation</span>
+
+</div>
+
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================
+     FUTURE
+========================= -->
+
+<section id="future">
+
+<div class="container">
+
+<div class="section-title fade">
+
+<small>LOOKING AHEAD</small>
+
+<h2>What Could Tomorrow Look Like?</h2>
+
+<p>
+Technology continues to evolve. These areas could
+play an important role in the future.
+</p>
+
+</div>
+
+
+<div class="future-grid">
+
+
+<div class="future-card fade">
+
+<h3>🚗 Autonomous Mobility</h3>
+
+<p>
+Intelligent transportation systems could make
+travel more connected and efficient.
+</p>
+
+</div>
+
+
+<div class="future-card fade">
+
+<h3>🧠 Advanced AI</h3>
+
+<p>
+More capable AI systems could become powerful
+tools for research, education and creativity.
+</p>
+
+</div>
+
+
+<div class="future-card fade">
+
+<h3>🌐 Connected World</h3>
+
+<p>
+Devices, buildings and infrastructure could
+communicate through increasingly connected networks.
+</p>
+
+</div>
+
+
+<div class="future-card fade">
+
+<h3>🌱 Green Technology</h3>
+
+<p>
+Technology can support cleaner energy,
+efficient systems and more sustainable development.
+</p>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================
+     CTA
+========================= -->
+
+<section class="cta">
+
+<div class="container fade">
+
+<h2>
+The Future Needs Innovators.
+</h2>
+
+<p>
+Learn. Build. Experiment. Create.
+The next breakthrough could start with a simple idea.
+</p>
+
+<div class="hero-buttons">
+
+<a href="#home" class="btn btn-primary">
+Back to Top ↑
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+<div class="footer-logo">
+NEXORA
+</div>
+
+<p>
+AI • Robotics • Cybersecurity • Smart Cities • Innovation
+</p>
+
+<p style="margin-top:10px;">
+© 2026 NEXORA — Student Technology Project
+</p>
+
+</footer>
+
+
+
+<!-- =========================
+     JAVASCRIPT
+========================= -->
+
+<script>
+
+const elements =
+document.querySelectorAll(".fade");
+
+
+const observer =
+new IntersectionObserver(
+
+(entries)=>{
+
+entries.forEach(entry=>{
+
+if(entry.isIntersecting){
+
+entry.target.classList.add("show");
+
+}
+
+});
+
+},
+
+{
+threshold:0.15
+}
+
+);
+
+
+elements.forEach(element=>{
+
+observer.observe(element);
+
+});
+
+
+/* Smooth scrolling */
+
+document
+.querySelectorAll('a[href^="#"]')
+.forEach(link=>{
+
+link.addEventListener("click",function(e){
+
+e.preventDefault();
+
+const target =
+document.querySelector(
+this.getAttribute("href")
+);
+
+if(target){
+
+target.scrollIntoView({
+behavior:"smooth"
+});
+
+}
+
+});
+
+});
+
+</script>
+
+
+</body>
+</html>
+```
